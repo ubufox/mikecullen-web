@@ -1,4 +1,5 @@
 import axios from 'axios';
+import _ from 'lodash';
 
 import { API_GET_VIDEOS_ENDPOINT } from '../../urls';
 
@@ -16,7 +17,7 @@ export const getVideos = (dispatch) => async () => {
 
     dispatch({
       type: GET_VIDEOS_SUCCESS,
-      data: res.data,
+      data: _.values(res.data),
     });
   } catch (e) {
     dispatch({

@@ -1,0 +1,16 @@
+.navigation {
+  width: 100vw;
+  position: fixed;
+  bottom: 72px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 100;
+
+  .previous {
+    color: white;
+  }
+
+  .next {
+    color: white;
+  }
+}
