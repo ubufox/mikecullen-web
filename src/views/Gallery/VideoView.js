@@ -23,10 +23,10 @@ const VideoFrame = ({
         title={title}
         width="560"
         height="315"
-        src={`https://${url}`}
+        src={`https://${url}?autoplay=1`}
         frameborder="0"
-        allow="autoplay; encrypted-media;"
         allowfullscreen="true"
+        allow="autoplay; encrypted-media;"
       >
       </iframe>
     </div>
