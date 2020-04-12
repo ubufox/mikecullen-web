@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Videos from './videos';
+import Survey from './survey';
 
 
 const independentProviders = [
@@ -8,7 +9,7 @@ const independentProviders = [
 ];
 
 const dependentProviders = [
-  // Surveys
+  Survey,
 ];
 
 const providers = [

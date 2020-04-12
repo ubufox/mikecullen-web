@@ -1,42 +1,52 @@
-import React, { useState } from 'react';
+import React, {
+  useContext,
+  useEffect,
+  useState,
+} from 'react';
 
+import VideoFrame from '../VideoFrame';
+import VideoInfo from './VideoInfo';
+import { SurveyContext } from '../../data/providers/providers/survey';
+
+import logo from '../../styles/assets/makemikecullenfamous.png';
+import play from '../../styles/assets/play.png';
 import styles from './styles/VideoView.module.scss';
 
-const VideoFrame = ({
-  title,
-  url,
-  closeFunc,
-}) => (
-  <div className={styles.frame}>
-    <div>
-      <div
-        alt="close video"
-        className={styles.close}
-        role="button"
-        tabIndex={0}
-        onClick={closeFunc}
-        onKeyPress={closeFunc}
-      >
-        Close
-      </div>
-      <iframe
-        title={title}
-        width="560"
-        height="315"
-        src={`https://${url}?autoplay=1`}
-        frameborder="0"
-        allowfullscreen="true"
-        allow="autoplay; encrypted-media;"
-      >
-      </iframe>
-    </div>
-  </div>
-);
+
+const scrollDown = () => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
+
+const getImageStyle = (imgSrc) => ({
+  backgroundImage: `url('${imgSrc}')`,
+  backgroundRepeat: 'no-repeat',
+  backgroundSize: 'cover',
+  height: '100vh',
+  width: '100vw',
+});
+
 
 const Component = ({ video }) => {
+  const { state, actions } = useContext(SurveyContext);
   const [showVideo, setShow] = useState(false);
 
-  const toggle = () => setShow(!showVideo);
+  const { results } = state;
+  const stats = results[video.id];
+
+  useEffect(() => {
+    if (!stats) {
+      actions.getVideoResults(video.id);
+    }
+  }, [stats, actions, video])
+
+  useEffect(() => {
+    if (showVideo) {
+      scrollDown();
+    }
+  }, [showVideo])
+
+  const toggle = () => {
+    const newShow = !showVideo;
+    setShow(newShow);
+  };
 
   const imgSrc = typeof video.thumbnails.max !== 'undefined'
     ? video.thumbnails.max.url
@@ -44,33 +54,26 @@ const Component = ({ video }) => {
 
   return (
     <div className={styles.view}>
-      <img
-        alt="video preview"
-        className={styles.bgImg}
-        src={imgSrc}
-      />
+      <img alt="logo" className={styles.logo} src={logo} />
+      <div style={getImageStyle(imgSrc)} />
       <div className={styles.imgOverlay} />
       <div className={styles.infoContainer}>
-        <div className={styles.title}>
-          { video.title }
-        </div>
-        <div className={styles.description}>
-          { video.description }
-        </div>
-        <div
-          alt="view video"
+        <img
+          alt="play"
+          src={play}
+          className={styles.playButton}
           role="button"
           tabIndex={0}
           onClick={toggle}
           onKeyPress={toggle}
-        >
-          View
-        </div>
+        />
+        <VideoInfo video={video} stats={stats} />
       </div>
       {
         showVideo && (
           <VideoFrame
             url={video.url}
+            videoID={video.id}
             title={video.title}
             closeFunc={() => setShow(false)}
           />

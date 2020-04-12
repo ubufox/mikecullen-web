@@ -3,6 +3,14 @@
   height: 100%;
   position: relative;
 
+  .logo {
+    max-width: 400px;
+    position: absolute;
+    margin-left: 48px;
+    margin-top: 60px;
+    z-index: 10;
+  }
+
   .bgImg {
     width: 100vw;
     position: absolute;
@@ -14,15 +22,14 @@
     position: absolute;
     top: 0;
     left: 0;
-    background-color: black;
-    opacity: 0.6;
+    background: radial-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.85) 65%);
     z-index: 5;
   }
 
   .infoContainer {
     position: absolute;
-    top: 60px;
-    left: 48px;
+    bottom: 72px;
+    margin-left: 48px;
     z-index: 10;
     color: white;
 
@@ -34,21 +41,5 @@
     .description {
       font-size: 16px;
     }
-  }
-}
-
-.frame {
-  width: 100vw;
-  height: 100vh;
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: black;
-  z-index: 1000;
-
-  .close {
-    cursor: pointer;
-    color: white;
   }
 }

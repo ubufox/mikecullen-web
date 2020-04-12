@@ -6,6 +6,8 @@ import React, {
 import { VideoContext } from '../../data/providers/providers/videos';
 import VideoView from './VideoView';
 
+import previousArrow from '../../styles/assets/arrow_previous.png';
+import nextArrow from '../../styles/assets/arrow_next.png';
 import styles from '../styles/main.module.scss';
 import galleryStyles from './styles/Gallery.module.scss';
 
@@ -15,8 +17,6 @@ const Component = () => {
   const [showIndex, setIndex] = useState(0);
 
   const { videos } = state;
-  console.log('videos');
-  console.log(videos);
 
   const next = () => {
     if (showIndex === videos.length - 1) {
@@ -49,6 +49,7 @@ const Component = () => {
           onClick={previous}
           onKeyPress={previous}
         >
+          <img alt="previous" src={previousArrow} />
           Previous
         </div>
         <div
@@ -60,6 +61,7 @@ const Component = () => {
           onKeyPress={next}
         >
           Next
+          <img alt="next" src={nextArrow} />
         </div>
       </div>
     </div>
