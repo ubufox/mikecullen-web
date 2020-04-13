@@ -1,11 +1,6 @@
 font-face {
-  font-family: 'Yrantramanav-Light';
-  src: local('Yrantramanav-Light'), url(./fonts/Yantramanav-Light.ttf) format('ttf');
-}
-
-font-face {
-  font-family: 'Yantramanav-Regular';
-  src: local('Yantramanav-Regular'), url(./fonts/Yantramanav-Regular.ttf) format('ttf');
+  font-family: 'Yantramanav';
+  src: local('Yantramanav'), url(./fonts/Yantramanav-Regular.ttf) format('ttf');
 }
 
 font-face {
@@ -19,5 +14,5 @@ font-face {
 }
 
 %yantra {
-  font-family: 'Yantramanav-Regular', san-serif;
+  font-family: 'Yantramanav', san-serif;
 }

@@ -36,8 +36,21 @@ const Component = ({ videoID }) => {
 
   const element =  submitted
     ? (
-      <div className={styles.header}>
-        Thanks for your answer!
+      <div>
+        <div className={styles.header}>
+          Thanks for your answer!
+        </div>
+        <div className={styles.thankYou}>
+          Follow Mike on instagram for more funny stuff
+        </div>
+        <a
+          className={styles.instagramLink}
+          href="https://instagram.com/mikeccullen"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          @mikeccullen
+        </a>
       </div>
     )
     : (
