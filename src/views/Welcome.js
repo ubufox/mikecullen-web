@@ -1,7 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import MediaQuery from 'react-responsive';
+
+import { TABLET_WIDTH } from '../styles/media_queries';
 
 import logo from '../styles/assets/makemikecullenfamous.png';
+import headsDesktop from '../styles/assets/heads_desktop.jpg';
+import headsMobile from '../styles/assets/heads_mobile.jpg';
 import nextArrow from '../styles/assets/arrow_next.png';
 
 import styles from './Welcome.module.scss';
@@ -15,6 +20,20 @@ const Component = () => {
           className={styles.logo}
           src={logo}
         />
+        <MediaQuery minWidth={TABLET_WIDTH}>
+          <img
+            alt="heads"
+            className={styles.heads}
+            src={headsDesktop}
+          />
+        </MediaQuery>
+        <MediaQuery maxWidth={TABLET_WIDTH - 1}>
+          <img
+            alt="heads"
+            className={styles.heads}
+            src={headsMobile}
+          />
+        </MediaQuery>
         <div className={styles.text}>
           <div>
           </div>
