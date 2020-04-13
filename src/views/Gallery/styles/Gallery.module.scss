@@ -8,10 +8,34 @@
   z-index: 100;
 
   .previous {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
     color: white;
+    outline: none;
+
+    &:hover {
+      color: #F9BF09;
+    }
+
+    .previousArrow {
+      margin-right: 8px;
+    }
   }
 
   .next {
+    display: flex;
+    align-items: center;
     color: white;
+    cursor: pointer;
+    outline: none;
+
+    &:hover {
+      color: #F9BF09;
+    }
+
+    .nextArrow {
+      margin-left: 8px;
+    }
   }
 }

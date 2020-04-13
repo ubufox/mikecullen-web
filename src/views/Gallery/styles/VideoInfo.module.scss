@@ -1,10 +1,18 @@
+@import '../../../styles/_fonts.scss';
+
+
 .title {
+  @extend %miller;
+  max-width: 600px;
   font-size: 54px;
   font-weight: 700;
   color: #fff;
+  margin-bottom: 12px;
 }
 
 .description {
+  @extend %yantra;
+  max-width: 520px;
   font-size: 16px;
   font-weight: 300;
   color: #F3E6DE;
@@ -22,8 +30,10 @@
 .stats {
   display: flex;
   align-items: flex-end;
+  margin-top: 36px;
 
   .count {
+    @extend %miller;
     font-size: 90px;
     font-weight: 700;
     line-height: 71px;
@@ -31,9 +41,26 @@
   }
 
   .choice {
+    @extend %yantra;
     max-width: 280px;
     font-size: 16px;
     font-weight: 300;
     color: #F3E6DE;
   }
+}
+
+.pink {
+  color: #EEACB0;
+}
+
+.green {
+  color: #429B57;
+}
+
+.red {
+  color: #E74C24;
+}
+
+.yellow {
+  color: #F9BF09;
 }

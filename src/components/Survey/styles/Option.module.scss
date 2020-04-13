@@ -1,0 +1,33 @@
+@import '../../../styles/_fonts.scss';
+
+
+.container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 20px;
+  outline: none;
+
+  .box {
+    width: 24px;
+    height: 24px;
+    background-color: #353535;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8);
+    margin-right: 16px;
+  }
+
+  .selectedBox {
+    background-color: #F9BF09;
+  }
+
+  .text {
+    @extend %yantra;
+    font-size: 16px;
+    color: #A69D97;
+  }
+
+  .selectedText {
+    color: #F3E6DE;
+  }
+}

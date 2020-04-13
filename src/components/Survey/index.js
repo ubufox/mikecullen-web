@@ -7,6 +7,7 @@ import React, {
 import Form from './Form';
 import { SurveyContext } from '../../data/providers/providers/survey';
 
+import styles from './styles/Survey.module.scss';
 
 const Component = ({ videoID }) => {
   const { state, actions } = useContext(SurveyContext);
@@ -26,19 +27,38 @@ const Component = ({ videoID }) => {
 
 
   const submit = (optionID) => {
-    actions.saveSelection(optionID, videoID);
+    actions.submitChoice(videoID, optionID);
+    setSubmitted(true);
   };
 
+  const element =  submitted
+    ? (
+      <div className={styles.header}>
+        Thanks for your answer!
+      </div>
+    )
+    : (
+      <div>
+        <div className={styles.header}>
+          Let us know what you think!
+        </div>
+        <div>
+          <Form
+            options={videoChoices}
+            onSubmit={submit}
+            loading={loading}
+          />
+        </div>
+      </div>
+    );
 
   return (
-    <div>
-      <div>
-        Let us know what you think!
-      </div>
-      <Form
-        options={choices}
-        onSubmit={submit}
-      />
+    <div className={styles.container}>
+      {
+        !loading && videoChoices
+          ? element
+          : null
+      }
     </div>
   );
 }

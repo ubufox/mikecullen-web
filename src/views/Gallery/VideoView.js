@@ -24,18 +24,18 @@ const getImageStyle = (imgSrc) => ({
 });
 
 
-const Component = ({ video }) => {
+const Component = ({ video, color }) => {
   const { state, actions } = useContext(SurveyContext);
   const [showVideo, setShow] = useState(false);
 
-  const { results } = state;
+  const { loading, results } = state;
   const stats = results[video.id];
 
   useEffect(() => {
-    if (!stats) {
+    if (!stats && !loading) {
       actions.getVideoResults(video.id);
     }
-  }, [stats, actions, video])
+  }, [stats, actions, loading, video.id]);
 
   useEffect(() => {
     if (showVideo) {
@@ -67,7 +67,11 @@ const Component = ({ video }) => {
           onClick={toggle}
           onKeyPress={toggle}
         />
-        <VideoInfo video={video} stats={stats} />
+        <VideoInfo
+          video={video}
+          stats={stats}
+          color={color}
+        />
       </div>
       {
         showVideo && (

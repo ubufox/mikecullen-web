@@ -11,6 +11,12 @@ import nextArrow from '../../styles/assets/arrow_next.png';
 import styles from '../styles/main.module.scss';
 import galleryStyles from './styles/Gallery.module.scss';
 
+const COLOR_OPTIONS = [
+  'pink',
+  'green',
+  'red',
+  'yellow',
+];
 
 const Component = () => {
   const { state } = useContext(VideoContext);
@@ -33,9 +39,24 @@ const Component = () => {
     }
   };
 
-  const videoViews = videos.map((v) => (
-    <VideoView key={`video-${v.id}`} video={v} />
-  ));
+  let colorIdx = 0;
+
+  const videoViews = videos.map((v) => {
+    const color = COLOR_OPTIONS[colorIdx];
+    if (colorIdx === 3) {
+      colorIdx = 0;
+    } else {
+      colorIdx += 1;
+    }
+
+    return (
+      <VideoView
+        key={`video-${v.id}`}
+        video={v}
+        color={color}
+      />
+    );
+  });
 
   return (
     <div className={styles.view}>
@@ -49,7 +70,11 @@ const Component = () => {
           onClick={previous}
           onKeyPress={previous}
         >
-          <img alt="previous" src={previousArrow} />
+          <img
+            alt="previous"
+            className={galleryStyles.previousArrow}
+            src={previousArrow}
+          />
           Previous
         </div>
         <div
@@ -61,7 +86,11 @@ const Component = () => {
           onKeyPress={next}
         >
           Next
-          <img alt="next" src={nextArrow} />
+          <img
+            alt="next"
+            className={galleryStyles.nextArrow}
+            src={nextArrow}
+          />
         </div>
       </div>
     </div>

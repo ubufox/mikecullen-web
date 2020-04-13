@@ -62,9 +62,6 @@ export const getVideoResults = (dispatch) => async (videoID) => {
     const url = API_GET_VIDEO_RESULTS_ENDPOINT.replace('{{videoID}}', videoID);
     const res = await axios.get(url);
 
-    console.log('res.data');
-    console.log(res.data);
-
     dispatch({
       type: GET_VIDEO_RESULTS_SUCCESS,
       data: {

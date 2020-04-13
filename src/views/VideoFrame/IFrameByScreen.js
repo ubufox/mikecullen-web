@@ -9,9 +9,9 @@ const Component = ({
     <>
       <iframe
         title={title}
-        width="800"
-        height="450"
-        src={`https://${url}?autoplay=1`}
+        width="540"
+        height="304"
+        src={`https://${url}?autoplay=1&rel=0`}
         frameBorder="0"
         allowFullScreen={true}
         allow="autoplay; encrypted-media;"

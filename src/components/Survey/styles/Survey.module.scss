@@ -1,0 +1,12 @@
+@import '../../../styles/_fonts.scss';
+
+
+.container {
+  .header {
+    @extend %miller;
+    font-size: 24px;
+    font-weight: 700;
+    color: #F3E6DE;
+    margin-bottom: 28px;
+  }
+}

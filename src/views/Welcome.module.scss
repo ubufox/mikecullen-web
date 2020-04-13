@@ -1,0 +1,78 @@
+@import '../styles/_fonts.scss';
+
+
+.largeLogo {
+  margin-left: 48px;
+}
+
+.logo {
+  position: absolute;
+  max-width: 200px;
+  top: 60px;
+  left: 48px;
+}
+
+.fullContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .itemContainer {
+    max-width: 1024px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 48px;
+
+    .text {
+      @extend %miller;
+      font-size: 48px;
+      font-weight: 700;
+      color: #F3E6DE;
+    }
+
+    .firstLine {
+      margin-bottom: 36px;
+    }
+
+    .highlight {
+      display: inline-block;
+    }
+
+    .pink {
+      color: #EEACB0;
+    }
+
+    .green {
+      color: #429B57;
+    }
+
+    .red {
+      color: #E74C24;
+    }
+
+    .yellow {
+      color: #F9BF09;
+    }
+
+    .link {
+      display: flex;
+      align-items: center;
+      margin-top: 48px;
+      text-decoration: none;
+      cursor: pointer;
+      color: #EEACB0;
+
+      &:hover {
+        color: #f9BF09;
+      }
+    }
+
+    .next {
+      margin-left: 12px;
+      height: 20px;
+    }
+  }
+}

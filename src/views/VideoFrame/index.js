@@ -4,6 +4,7 @@ import Survey from '../../components/Survey';
 import IFrameByScreen from './IFrameByScreen';
 
 import styles from './styles.module.scss';
+import closeX from '../../styles/assets/close_x.svg';
 
 
 const Component = ({
@@ -21,13 +22,18 @@ const Component = ({
       onClick={closeFunc}
       onKeyPress={closeFunc}
     >
-      Close
+      close
+      <img
+        alt="close"
+        className={styles.icon}
+        src={closeX}
+      />
     </div>
-    <div>
-      <div>
+    <div className={styles.splitView}>
+      <div className={styles.leftSide}>
         <IFrameByScreen title={title} url={url} />
       </div>
-      <div>
+      <div className={styles.rightSide}>
         <Survey videoID={videoID} />
       </div>
     </div>

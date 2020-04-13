@@ -1,21 +1,31 @@
 import React from 'react';
 
+import styles from './styles/Option.module.scss';
+
 const Component = ({
   onClick,
   isSelected,
   text,
 }) => {
-  const optionStyles = [];
+  const boxStyles = [styles.box];
+  const textStyles = [styles.text];
+
   if (isSelected) {
-    optionStyles.push();
+    boxStyles.push(styles.selectedBox);
+    textStyles.push(styles.selectedText);
   }
 
   return (
-    <div>
-      <div>
-
-      </div>
-      <div>
+    <div
+      alt="option"
+      className={styles.container}
+      role="button"
+      tabIndex={0}
+      onClick={onClick}
+      onKeyPress={onClick}
+    >
+      <div className={boxStyles.join(' ')} />
+      <div className={textStyles.join(' ')}>
         { text }
       </div>
     </div>

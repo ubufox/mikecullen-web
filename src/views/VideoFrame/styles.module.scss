@@ -2,20 +2,46 @@
   width: 100vw;
   height: 100vh;
   position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   background-color: black;
+  display: flex;
+  justify-content: center;
 
-  .leftSide {
-  }
+  .splitView {
+    max-width: 1280px;
+    width: 100%;
+    display: flex;
 
-  .rightSide {
+    .leftSide {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
+    .rightSide {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   }
 
   .close {
+    position: absolute;
+    top: 60px;
+    right: 48px;
     cursor: pointer;
     color: white;
+    display: flex;
+    align-items: center;
+    outline: none;
+
+    &:hover {
+      color: #F9BF09;
+    }
+
+    .icon {
+      margin-left: 8px;
+    }
   }
 }

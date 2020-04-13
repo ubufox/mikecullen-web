@@ -1,25 +1,23 @@
-Miller Display Roman
+font-face {
+  font-family: 'Yrantramanav-Light';
+  src: local('Yrantramanav-Light'), url(./fonts/Yantramanav-Light.ttf) format('ttf');
+}
 
-font-family: miller-display, serif;
+font-face {
+  font-family: 'Yantramanav-Regular';
+  src: local('Yantramanav-Regular'), url(./fonts/Yantramanav-Regular.ttf) format('ttf');
+}
 
-font-weight: 400;
-
-font-style: normal;
-
-
-Miller Display Bold
-
-font-family: miller-display, serif;
-
-font-weight: 700;
-
-font-style: normal;
+font-face {
+  font-family: 'Miller';
+  src: local('Miller'), url(./fonts/MillerDisplay-Bold.ttf) format('ttf');
+}
 
 
-Miller Display Italic
+%miller {
+  font-family: 'Miller', serif;
+}
 
-font-family: miller-display, serif;
-
-font-weight: 400;
-
-font-style: italic;
+%yantra {
+  font-family: 'Yantramanav-Regular', san-serif;
+}

@@ -1,8 +1,17 @@
 import React, { useState } from 'react';
 
+import Option from './Option';
+import SubmitButton from './SubmitButton';
 
-const Component = ({ options, onSubmit }) => {
+import styles from './styles/Form.module.scss';
+
+
+const Component = ({ options, onSubmit, loading }) => {
   const [selectedOption, select] = useState(null);
+
+  if (options === 0) {
+    return <div />;
+  }
 
   const selectOption = (option) => () => select(option);
 
@@ -17,13 +26,14 @@ const Component = ({ options, onSubmit }) => {
   const submit = () => onSubmit(selectedOption);
 
   return (
-    <div>
-      <div>
+    <div className={styles.container}>
+      <div className={styles.optionsContainer}>
         { optionElements }
       </div>
       <SubmitButton
         onClick={submit}
         label="submit"
+        disabled={!selectedOption || loading}
       />
     </div>
   );
