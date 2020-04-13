@@ -52,7 +52,7 @@ const Component = () => {
               seriously funny guy
             </span>
             . &nbsp;And now as his birthday approaches, we&apos;d really appreciate if
-            you&apos; watch a few of his&nbsp;
+            you&apos;d watch a few of his&nbsp;
             <span className={[styles.highlight, styles.yellow].join(' ')}>
               hilarious videos
             </span>
