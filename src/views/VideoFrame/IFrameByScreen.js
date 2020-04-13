@@ -4,7 +4,6 @@ import MediaQuery from 'react-responsive';
 import {
   MOBILE_WIDTH,
   XL_MOBILE_WIDTH,
-  IPAD_WIDTH,
 } from '../../styles/media_queries';
 
 

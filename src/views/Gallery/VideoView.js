@@ -9,8 +9,11 @@ import VideoInfo from './VideoInfo';
 import { SurveyContext } from '../../data/providers/providers/survey';
 
 import logo from '../../styles/assets/makemikecullenfamous.png';
+import previousArrow from '../../styles/assets/arrow_previous.png';
+import nextArrow from '../../styles/assets/arrow_next.png';
 import play from '../../styles/assets/play.png';
 import styles from './styles/VideoView.module.scss';
+import galleryStyles from './styles/Gallery.module.scss';
 
 
 const scrollDown = () => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
@@ -25,7 +28,12 @@ const getImageStyle = (imgSrc) => ({
 });
 
 
-const Component = ({ video, color }) => {
+const Component = ({
+  video,
+  color,
+  previous,
+  next,
+}) => {
   const { state, actions } = useContext(SurveyContext);
   const [showVideo, setShow] = useState(false);
 
@@ -84,6 +92,38 @@ const Component = ({ video, color }) => {
           />
         )
       }
+      <div className={galleryStyles.navigation}>
+        <div
+          alt="previous"
+          className={galleryStyles.previous}
+          role="button"
+          tabIndex={0}
+          onClick={previous}
+          onKeyPress={previous}
+        >
+          <img
+            alt="previous"
+            className={galleryStyles.previousArrow}
+            src={previousArrow}
+          />
+          Previous
+        </div>
+        <div
+          alt="next"
+          className={galleryStyles.next}
+          role="button"
+          tabIndex={0}
+          onClick={next}
+          onKeyPress={next}
+        >
+          Next
+          <img
+            alt="next"
+            className={galleryStyles.nextArrow}
+            src={nextArrow}
+          />
+        </div>
+      </div>
     </div>
   );
 };
