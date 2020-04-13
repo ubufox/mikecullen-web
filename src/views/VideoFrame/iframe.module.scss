@@ -1,0 +1,34 @@
+@import '../../styles/_media_queries.scss';
+
+
+.iframeContainer {
+  width: 320px;
+  height: 180px;
+  position: relative;
+  overflow: hidden;
+
+  @media (min-width: 375px) {
+    width: 375px;
+    height: 210px;
+  }
+
+  @media (min-width: $mobile) {
+    width: 414px;
+    height: 232px;
+  }
+
+  @media (min-width: $mobile) {
+    width: 600px;
+    height: 337px;
+  }
+
+  .iframeElement {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+};
+
