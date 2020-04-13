@@ -68,7 +68,7 @@ const Component = () => {
             &nbsp;and tell us what you think!
           </div>
           <Link to="/gallery" className={[styles.text, styles.link].join(' ')}>
-            THE GOODS
+            Let&apos;s make Mike famous
             <img
               alt="next"
               src={nextArrow}

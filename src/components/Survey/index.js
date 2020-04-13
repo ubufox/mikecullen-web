@@ -26,9 +26,11 @@ const Component = ({ videoID }) => {
   }, [videoChoices, actions, videoID, loading]);
 
 
-  const submit = (optionID) => {
-    actions.submitChoice(videoID, optionID);
+  const submit = async (optionID) => {
+    await actions.submitChoice(videoID, optionID);
     setSubmitted(true);
+
+    await actions.getVideoResults(videoID);
   };
 
   const element =  submitted
