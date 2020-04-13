@@ -1,7 +1,4 @@
-import React, {
-  useState,
-  useEffect,
-} from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 import logo from '../styles/assets/makemikecullenfamous.png';
@@ -10,29 +7,6 @@ import nextArrow from '../styles/assets/arrow_next.png';
 import styles from './Welcome.module.scss';
 
 const Component = () => {
-  const [complete, setComplete] = useState(false);
-
-  useEffect(() => {
-    const timeoutID = setTimeout(() => {
-      setComplete(true);
-    }, 2500);
-
-    return () => clearTimeout(timeoutID);
-  }, [])
-
-
-  if (!complete) {
-    return (
-      <div className={styles.fullContainer}>
-        <img
-          alt="logo"
-          className={styles.largeLogo}
-          src={logo}
-        />
-      </div>
-    );
-  }
-
   return (
     <div className={styles.fullContainer}>
       <div className={styles.itemContainer}>
@@ -45,13 +19,11 @@ const Component = () => {
           <div>
           </div>
           <div>
-            <div className={styles.firstLine}>
-              Welcome to&nbsp;
-              <span className={[styles.highlight, styles.green].join(' ')}>
-                MakeMikeCullenFamous.com!
-              </span>
-            </div>
-            We purchased this domain about a year ago after having a few drinks
+            Welcome to&nbsp;
+            <span className={[styles.highlight, styles.green].join(' ')}>
+              MakeMikeCullenFamous.com!
+            </span>
+            &nbsp;We purchased this domain about a year ago after having a few drinks
             with our good friend&nbsp;
             <span className={[styles.highlight, styles.red].join(' ')}>
               Mike Cullen

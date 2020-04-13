@@ -2,8 +2,8 @@
 
 
 .container {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   position: absolute;
   background-color: black;
   display: flex;
@@ -14,7 +14,7 @@
     width: 100%;
     display: flex;
 
-    @media (max-width: $mobile) {
+    @media (max-width: $ipad) {
       flex-direction: column;
     }
 
@@ -35,8 +35,11 @@
       justify-content: center;
       align-items: center;
 
-      @media (max-width: $mobile) {
+      @media (max-width: $ipad) {
         align-items: flex-start;
+      }
+
+      @media (max-width: $xl-mobile) {
         padding: 0 20px;
       }
     }
@@ -52,8 +55,11 @@
     align-items: center;
     outline: none;
 
-    @media (max-width: $mobile) {
+    @media (max-width: $ipad) {
       top: 24px;
+    }
+
+    @media (max-width: $mobile) {
       right: 20px;
     }
 
@@ -61,8 +67,8 @@
       color: #F9BF09;
     }
 
-    .icon {
-      margin-left: 8px;
-    }
+    .closeText {
+        margin-right: 8px;
+     }
   }
 }

@@ -1,9 +1,12 @@
 @import '../../../styles/_media_queries.scss';
+@import '../../../styles/_fonts.scss';
 
 
 .navigation {
+  @extend %yantra;
+  font-weight: 600;
   width: 200px;
-  position: fixed;
+  position: absolute;
   bottom: 72px;
   right: 48px;
   display: flex;

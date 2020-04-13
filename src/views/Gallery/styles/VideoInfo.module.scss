@@ -21,6 +21,10 @@
   font-size: 16px;
   font-weight: 300;
   color: #F3E6DE;
+
+  @media (max-width: $mobile) {
+    font-size: 14px;
+  }
 }
 
 .divider {
@@ -61,6 +65,10 @@
     font-size: 16px;
     font-weight: 300;
     color: #F3E6DE;
+
+    @media (max-width: $mobile) {
+      font-size: 14px;
+    }
   }
 }
 

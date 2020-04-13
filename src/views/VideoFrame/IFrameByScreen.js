@@ -3,6 +3,7 @@ import MediaQuery from 'react-responsive';
 
 import {
   MOBILE_WIDTH,
+  XL_MOBILE_WIDTH,
   IPAD_WIDTH,
 } from '../../styles/media_queries';
 
@@ -13,7 +14,7 @@ const Component = ({
 }) => {
   return (
     <>
-      <MediaQuery maxWidth={MOBILE_WIDTH}>
+      <MediaQuery maxWidth={374}>
         <iframe
           title={title}
           width="320"
@@ -25,11 +26,11 @@ const Component = ({
         >
         </iframe>
       </MediaQuery>
-      <MediaQuery maxWidth={IPAD_WIDTH} minWidth={MOBILE_WIDTH}>
+      <MediaQuery minWidth={375} maxWidth={MOBILE_WIDTH - 1}>
         <iframe
           title={title}
-          width="540"
-          height="304"
+          width="375"
+          height="210"
           src={`https://${url}?autoplay=1&rel=0`}
           frameBorder="0"
           allowFullScreen={true}
@@ -37,11 +38,23 @@ const Component = ({
         >
         </iframe>
       </MediaQuery>
-      <MediaQuery minWidth={IPAD_WIDTH}>
+      <MediaQuery maxWidth={XL_MOBILE_WIDTH - 1} minWidth={MOBILE_WIDTH}>
         <iframe
           title={title}
-          width="625"
-          height="351"
+          width="414"
+          height="232"
+          src={`https://${url}?autoplay=1&rel=0`}
+          frameBorder="0"
+          allowFullScreen={true}
+          allow="autoplay; encrypted-media;"
+        >
+        </iframe>
+      </MediaQuery>
+      <MediaQuery minWidth={XL_MOBILE_WIDTH}>
+        <iframe
+          title={title}
+          width="600"
+          height="337"
           src={`https://${url}?autoplay=1&rel=0`}
           frameBorder="0"
           allowFullScreen={true}

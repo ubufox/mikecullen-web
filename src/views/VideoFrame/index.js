@@ -22,7 +22,9 @@ const Component = ({
       onClick={closeFunc}
       onKeyPress={closeFunc}
     >
-      close
+      <span className={styles.closeText}>
+        close
+      </span>
       <img
         alt="close"
         className={styles.icon}
