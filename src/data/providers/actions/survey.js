@@ -21,7 +21,8 @@ export const getChoices = (dispatch) => async (videoID) => {
   dispatch({ type: GET_CHOICES });
 
   try {
-    const res = await axios.get(API_GET_CHOICES_ENDPOINT);
+    const url = API_GET_CHOICES_ENDPOINT.replace('{{videoID}}', videoID);
+    const res = await axios.get(url);
 
     dispatch({
       type: GET_CHOICES_SUCCESS,

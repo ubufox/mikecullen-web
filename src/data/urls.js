@@ -8,4 +8,4 @@ export const API_GET_VIDEOS_ENDPOINT = `${API_PREFIX}/video/videos`
 export const SURVEY_API = `${API_PREFIX}/survey`;
 export const API_GET_VIDEO_RESULTS_ENDPOINT = `${SURVEY_API}/videoStats/{{videoID}}`;
 export const API_SAVE_SURVEY_ENDPOINT = `${SURVEY_API}/saveSelection`;
-export const API_GET_CHOICES_ENDPOINT = `${SURVEY_API}/getTwoChoices`;
+export const API_GET_CHOICES_ENDPOINT = `${SURVEY_API}/getVideoChoices/{{videoID}}`;

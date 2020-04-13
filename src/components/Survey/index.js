@@ -16,14 +16,15 @@ const Component = ({ videoID }) => {
   const {
     choices,
     loading,
+    error,
   } = state;
   const videoChoices = choices[videoID];
 
   useEffect(() => {
-    if (!loading && !videoChoices) {
+    if (!loading && !videoChoices && !error) {
       actions.getChoices(videoID);
     }
-  }, [videoChoices, actions, videoID, loading]);
+  }, [videoChoices, actions, videoID, loading, error]);
 
 
   const submit = async (optionID) => {
