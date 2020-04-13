@@ -55,6 +55,12 @@ const Component = ({
   const toggle = () => {
     const newShow = !showVideo;
     setShow(newShow);
+
+    try {
+      window.firebase.analytics().logEvent('play', { video: video.id });
+    } catch (e) {
+      // error logging event
+    }
   };
 
   const imgSrc = typeof video.thumbnails.max !== 'undefined'
