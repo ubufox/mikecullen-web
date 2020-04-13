@@ -1,3 +1,6 @@
+@import '../../../styles/_media_queries.scss';
+
+
 .navigation {
   width: 200px;
   position: fixed;
@@ -6,6 +9,12 @@
   display: flex;
   justify-content: space-between;
   z-index: 100;
+
+  @media (max-width: $mobile) {
+    width: calc(100% - 40px);
+    left: 20px;
+    bottom: 24px;
+  }
 
   .previous {
     display: flex;

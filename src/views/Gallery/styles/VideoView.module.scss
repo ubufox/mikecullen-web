@@ -1,3 +1,5 @@
+@import '../../../styles/_media_queries.scss';
+
 .view {
   width: 100%;
   height: 100%;
@@ -9,6 +11,12 @@
     margin-left: 48px;
     margin-top: 60px;
     z-index: 10;
+
+    @media (max-width: $mobile) {
+      max-width: 136px;
+      margin-top: 24px;
+      margin-left: 20px;
+    }
   }
 
   .bgImg {
@@ -33,10 +41,20 @@
     z-index: 10;
     color: white;
 
+    @media (max-width: $mobile) {
+      margin-left: 20px;
+      bottom: 72px;
+    }
+
     .playButton {
       cursor: pointer;
       margin-bottom: 36px;
       outline: none;
+
+      @media (max-width: $mobile) {
+        width: 48px;
+        margin-bottom: 24px;
+      }
 
       &:hover {
         opacity: 0.7;

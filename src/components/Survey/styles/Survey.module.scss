@@ -1,12 +1,20 @@
 @import '../../../styles/_fonts.scss';
+@import '../../../styles/_media_queries.scss';
 
 
 .container {
+  width: 100%;
+
   .header {
     @extend %miller;
     font-size: 24px;
     font-weight: 700;
     color: #F3E6DE;
     margin-bottom: 28px;
+
+    @media (max-width: $mobile) {
+      font-size: 18px;
+      margin-bottom: 16px;
+    }
   }
 }

@@ -1,3 +1,6 @@
+@import '../../styles/_media_queries.scss';
+
+
 .container {
   width: 100vw;
   height: 100vh;
@@ -11,11 +14,19 @@
     width: 100%;
     display: flex;
 
+    @media (max-width: $mobile) {
+      flex-direction: column;
+    }
+
     .leftSide {
       flex: 1;
       display: flex;
       justify-content: center;
       align-items: center;
+
+      @media (max-width: $mobile) {
+        padding-top: 20px;
+      }
     }
 
     .rightSide {
@@ -23,6 +34,11 @@
       display: flex;
       justify-content: center;
       align-items: center;
+
+      @media (max-width: $mobile) {
+        align-items: flex-start;
+        padding: 0 20px;
+      }
     }
   }
 
@@ -35,6 +51,11 @@
     display: flex;
     align-items: center;
     outline: none;
+
+    @media (max-width: $mobile) {
+      top: 24px;
+      right: 20px;
+    }
 
     &:hover {
       color: #F9BF09;

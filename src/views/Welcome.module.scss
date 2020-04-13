@@ -1,8 +1,13 @@
 @import '../styles/_fonts.scss';
+@import '../styles/_media_queries.scss';
 
 
 .largeLogo {
   margin-left: 48px;
+
+  @media (max-width: $mobile) {
+    margin-left: 20px;
+  }
 }
 
 .logo {
@@ -10,6 +15,12 @@
   max-width: 200px;
   top: 60px;
   left: 48px;
+
+  @media (max-width: $mobile) {
+    max-width: 136px;
+    top: 24px;
+    left: 20px;
+  }
 }
 
 .fullContainer {
@@ -26,11 +37,24 @@
     justify-content: center;
     padding: 48px;
 
+    @media (max-width: $mobile) {
+      padding: 20px;
+    }
+
     .text {
       @extend %miller;
       font-size: 48px;
       font-weight: 700;
       color: #F3E6DE;
+
+      @media (max-width: $tablet) {
+        font-size: 36px;
+      }
+
+      @media (max-width: $mobile) {
+        margin-top: 72px;
+        font-size: 20px;
+      }
     }
 
     .firstLine {

@@ -1,4 +1,5 @@
 @import '../../../styles/_fonts.scss';
+@import '../../../styles/_media_queries.scss';
 
 
 .title {
@@ -8,6 +9,10 @@
   font-weight: 700;
   color: #fff;
   margin-bottom: 12px;
+
+  @media (max-width: $mobile) {
+    font-size: 28px;
+  }
 }
 
 .description {
@@ -32,12 +37,22 @@
   align-items: flex-end;
   margin-top: 36px;
 
+  @media (max-width: $mobile) {
+    margin-top: 20px;
+  }
+
   .count {
     @extend %miller;
     font-size: 90px;
     font-weight: 700;
     line-height: 71px;
     margin-right: 20px;
+
+    @media (max-width: $mobile) {
+      font-size: 40px;
+      line-height: 1;
+      margin-right: 12px;
+    }
   }
 
   .choice {

@@ -1,4 +1,5 @@
 @import '../../../styles/_fonts.scss';
+@import '../../../styles/_media_queries.scss';
 
 
 .container {
@@ -7,6 +8,10 @@
   cursor: pointer;
   margin-bottom: 20px;
   outline: none;
+
+  @media (max-width: $mobile) {
+    margin-bottom: 16px;
+  }
 
   .box {
     width: 24px;

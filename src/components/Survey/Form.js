@@ -25,6 +25,9 @@ const Component = ({ options, onSubmit, loading }) => {
 
   const submit = () => onSubmit(selectedOption);
 
+  console.log('submit');
+  console.log(submit);
+
   return (
     <div className={styles.container}>
       <div className={styles.optionsContainer}>
